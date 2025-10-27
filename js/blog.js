@@ -1,4 +1,4 @@
-fetch('https://github.com/EthanShmepert/EthanMakesGames-Website/tree/main/Data/posts.json')
+fetch('https://raw.githubusercontent.com/EthanShmepert/EthanMakesGames-Website/refs/heads/main/Data/posts.json')
   .then(res => res.json())
   .then(posts => {
     const container = document.getElementById('blog-container');
