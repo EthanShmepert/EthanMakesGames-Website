@@ -1,0 +1,5 @@
+We started by creating a modular system for input, physics, and rendering.
+
+By separating gameplay logic from rendering, we gained flexibility for rapid iteration.
+
+Our physics layer uses deterministic math, so player inputs are perfectly reproducible in replays.

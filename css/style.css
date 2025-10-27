@@ -1,0 +1,186 @@
+
+.nav-link span {
+  position: relative;
+  display: inline-block; /* shrink to text width */
+}
+
+.nav-link span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;          /* small gap below text */
+  width: 0;
+  height: 2px;
+  background-color: #ff007f;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover span::after,
+.nav-link.active span::after {
+  width: 100%;            /* now matches text exactly */
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: row;
+  background: rgba(30, 30, 47, 0.85); /* dark mode */
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+}
+
+.blog-card img {
+  width: 40%;
+  object-fit: cover;
+}
+
+.blog-card .card-body {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card .card-body p {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.blog-card .card-body .text-muted {
+  color: #ccc !important; /* light gray for visibility on dark background */
+}
+
+.text-muted {
+      color: #ccc !important; /* light gray for visibility on dark background */
+
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .blog-card {
+    flex-direction: column;
+  }
+  .blog-card img {
+    width: 100%;
+  }
+}
+
+body {
+    background: #1e1e2f;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+/* Game cards */
+.game-card {
+  background: rgba(30,30,47,0.8);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;               /* horizontal layout */
+  flex-direction: row;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+}
+
+.game-card img {
+  width: 40%;                  /* fixed width for image on left */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.game-card .card-body {
+  padding: 1rem;
+  flex: 1;                     /* fill remaining space */
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 1rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* For mobile screens, stack vertically */
+@media (max-width: 768px) {
+  .game-card {
+    flex-direction: column;
+  }
+  .game-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+/* Index page background */
+body.index {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  background: url('../images/indexbg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* Full-page frosted overlay */
+body.index::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 47, 0.4); /* semi-transparent tint */
+  backdrop-filter: blur(10px);       /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 0;                        /* behind content */
+}
+
+body.index > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Centered main content vertically & horizontally */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* centers vertically */
+  text-align: center;
+  min-height: calc(100vh - 70px); /* subtract navbar height */
+  padding: 0 2rem;              /* horizontal padding */
+}
+
+.home-content p {
+  max-width: 600px;  /* text wraps after this width */
+  margin: 0 auto;    /* centers the text */
+  line-height: 1.6;
+}
