@@ -2,7 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const slug = params.get('slug');
 const container = document.getElementById('post-container');
 
-fetch('https://raw.githubusercontent.com/EthanShmepert/EthanMakesGames-Website/refs/heads/main/Data/posts.json')
+fetch('https://raw.githubusercontent.com/EthanShmepert/EthanMakesGames-Website/refs/heads/main/Data/posts.json?token=GHSAT0AAAAAADN6MWAIA2NPFZYTHPDT3MGA2H62OXQ')
   .then(res => res.json())
   .then(posts => {
     const post = posts.find(p => p.slug === slug);
